@@ -5,10 +5,21 @@ public class Livre extends Article {
     private String ISBN;
     private String auteur;
 
-    public Livre(String reference, double prix, String designation, String ISBN, String auteur) {
+    private int nbpage;
+
+    public Livre(String reference, double prix, String designation, String ISBN, String auteur, int nbpage) {
         super(reference, prix, designation);
         this.ISBN = ISBN;
         this.auteur = auteur;
+        this.nbpage = nbpage;
+    }
+
+    public int getNbpage() {
+        return nbpage;
+    }
+
+    public void setNbpage(int nbpage) {
+        this.nbpage = nbpage;
     }
 
     public String getISBN() {
@@ -27,7 +38,4 @@ public class Livre extends Article {
         this.auteur = auteur;
     }
 
-    public Livre(String reference, double prix, String designation) {
-        super(reference, prix, designation);
-    }
 }

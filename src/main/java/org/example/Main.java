@@ -5,7 +5,7 @@ public class Main {
 
     Article article1 = new Article("A001", 29.99, "Article 1");
     Article article2 = new Article("A002", 49.99, "Article 2");
-    Livre livre1 = new Livre("L001", 19.99, "Livre 1", "978-3-16-148410-0", "Auteur 1");
+    Livre livre1 = new Livre("L001", 19.99, "Livre 1", "978-3-16-148410-0", "Auteur 1",25);
     DVD dvd1 = new DVD("D001", 29.99, "DVD 1", 120.0, "Réalisateur 1");
 
     // Affichage Articles
@@ -57,6 +57,7 @@ public class Main {
             Livre livre = (Livre) article;
             System.out.println("ISBN: " + livre.getISBN());
             System.out.println("Auteur: " + livre.getAuteur());
+            System.out.println("Nombre de page : "+livre.getNbpage());
         } else if (article instanceof DVD) {
             DVD dvd = (DVD) article;
             System.out.println("Durée: " + dvd.getDuree() + " minutes");
