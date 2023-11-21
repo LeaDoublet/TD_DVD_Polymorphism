@@ -8,10 +8,9 @@ public class DVD extends Article{
         return duree;
     }
 
-    public DVD(String reference, double prix, String designation, double duree, String realisateur) {
-        super(reference, prix, designation);
+    public DVD(String reference, double prix, String designation, double duree, Personne realisateur) {
+        super(reference, prix, designation,realisateur);
         this.duree = duree;
-        this.realisateur = realisateur;
     }
 
     public void setDuree(double duree) {
@@ -28,7 +27,7 @@ public class DVD extends Article{
 
     private String realisateur;
 
-    public DVD(String reference, double prix, String designation) {
-        super(reference, prix, designation);
+    public DVD(String reference, double prix, String designation, Personne personne) {
+        super(reference, prix, designation,personne);
     }
 }
