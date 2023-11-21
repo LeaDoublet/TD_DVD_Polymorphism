@@ -1,12 +1,17 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args){
 
         Date d1 = new Date(12,10,1976);
+        Date d2 = new Date(25,02,2002);
         Personne auteur = new Personne("Jules","Verne",d1);
+        Personne auteur2 = new Personne("Tom","Dupont",d2);
     Article article1 = new Article("A001", 29.99, "Article 1", auteur);
-    Article article2 = new Article("A002", 49.99, "Article 2",auteur);
+    Article article2 = new Article("A002", 49.99, "Article 2",auteur2);
     Livre livre1 = new Livre("L001", 19.99, "Livre 1", "978-3-16-148410-0", auteur,25);
     DVD dvd1 = new DVD("D001", 29.99, "DVD 1", 120.0, auteur);
 
@@ -45,6 +50,20 @@ public class Main {
 
         System.out.println("\nDVD 1 après mise à jour de la désignation:");
         afficherDetailsArticle(dvd1);
+        System.out.println("---- Recherche d'articles par personne --------");
+
+
+        List<Article> articlesATester = new ArrayList<>();
+        articlesATester.add(article1);
+        articlesATester.add(article2);
+        articlesATester.add(livre1);
+        articlesATester.add(dvd1);
+
+        List<Article> articlesDeAuteurRecherche = Article.getArticlesByPersonne(articlesATester, auteur);
+
+        for (Article article : articlesDeAuteurRecherche) {
+            System.out.println("Article de l'auteur recherché: " + article.toString());
+        }
     }
 
 
@@ -65,6 +84,7 @@ public class Main {
             System.out.println("Durée: " + dvd.getDuree() + " minutes");
             System.out.println("Réalisateur: " + dvd.getRealisateur());
         }
+
 
     }
 }

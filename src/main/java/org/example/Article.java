@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Article {
     private String reference;
     private double prix;
@@ -45,5 +48,24 @@ public class Article {
 
     public void setPersonne(Personne personne) {
         this.personne = personne;
+    }
+    public static List<Article> getArticlesByPersonne(List<Article> articles, Personne personne) {
+        List<Article> articlesByPerson = new ArrayList<>();
+
+        for (Article article : articles) {
+            if (article.getPersonne().equals(personne)) {
+                articlesByPerson.add(article);
+            }
+        }
+
+        return articlesByPerson;
+    }
+    public String toString() {
+        return "Article{" +
+                "reference='" + reference + '\'' +
+                ", prix=" + prix +
+                ", designation='" + designation + '\'' +
+                ", personne=" + personne +
+                '}';
     }
 }
