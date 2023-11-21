@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args){
 
         Date d1 = new Date(12,10,1976);
-        Personne auteur = new Personne("nom","prenom",d1);
+        Personne auteur = new Personne("Jules","Verne",d1);
     Article article1 = new Article("A001", 29.99, "Article 1", auteur);
     Article article2 = new Article("A002", 49.99, "Article 2",auteur);
     Livre livre1 = new Livre("L001", 19.99, "Livre 1", "978-3-16-148410-0", auteur,25);
@@ -65,5 +65,6 @@ public class Main {
             System.out.println("Durée: " + dvd.getDuree() + " minutes");
             System.out.println("Réalisateur: " + dvd.getRealisateur());
         }
+
     }
 }

@@ -59,5 +59,8 @@ public class Date {
     public void displayDate() {
         System.out.println("Date: " + day + "/" + month + "/" + year);
     }
+    public String affichage(){
+        return "Date: " + day + "/" + month + "/" + year;
+    }
 }
 
