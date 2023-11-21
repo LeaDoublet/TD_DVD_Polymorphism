@@ -5,10 +5,15 @@ public class Article {
     private double prix;
     private String designation;
 
-    public Article(String reference, double prix, String designation) {
+
+
+    private Personne personne;
+
+    public Article(String reference, double prix, String designation,Personne personne) {
         this.reference = reference;
         this.prix = prix;
         this.designation = designation;
+        this.personne=personne;
     }
 
     public String getReference() {
@@ -33,5 +38,12 @@ public class Article {
 
     public void setDesignation(String designation) {
         this.designation = designation;
+    }
+    public Personne getPersonne() {
+        return personne;
+    }
+
+    public void setPersonne(Personne personne) {
+        this.personne = personne;
     }
 }

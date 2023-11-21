@@ -3,14 +3,14 @@ package org.example;
 public class Livre extends Article {
 
     private String ISBN;
-    private String auteur;
 
     private int nbpage;
 
-    public Livre(String reference, double prix, String designation, String ISBN, String auteur, int nbpage) {
-        super(reference, prix, designation);
+
+
+    public Livre(String reference, double prix, String designation, String ISBN, Personne personne, int nbpage) {
+        super(reference, prix, designation,personne);
         this.ISBN = ISBN;
-        this.auteur = auteur;
         this.nbpage = nbpage;
     }
 
@@ -30,12 +30,6 @@ public class Livre extends Article {
         this.ISBN = ISBN;
     }
 
-    public String getAuteur() {
-        return auteur;
-    }
 
-    public void setAuteur(String auteur) {
-        this.auteur = auteur;
-    }
 
 }
